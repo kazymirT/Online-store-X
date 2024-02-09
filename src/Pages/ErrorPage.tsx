@@ -2,6 +2,7 @@ import { useRouteError } from 'react-router-dom';
 
 const ErrorPage = () => {
   const error = useRouteError();
+  // eslint-disable-next-line no-console
   console.log(error);
 
   return (
