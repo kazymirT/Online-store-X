@@ -1,26 +1,19 @@
 import { useState } from 'react';
 
-import styles from './ProductSection.module.scss';
+import styles from './ProductCard.module.scss';
+import { Props } from './ProductCard.types';
 
-type Props = {
-  product: {
-    name: string;
-    price: { normalPrice: string; salePrice?: string };
-    images: string[];
-    like: boolean;
-  };
-};
-
-const SliderItem = ({ product: { name, price, images, like } }: Props) => {
+const ProductCard = ({ product: { name, price, images, like } }: Props) => {
   const [isLikeProduct, setIsLikeProduct] = useState<boolean>(like);
   const [imageIndex, setImageIndex] = useState<number>(0);
 
   const handlerLike = () => {
     setIsLikeProduct(!isLikeProduct);
   };
+
   return (
     <div
-      className={styles.slider__item}
+      className={styles['slider-item']}
       onMouseEnter={() => setImageIndex(1)}
       onMouseLeave={() => setImageIndex(0)}
     >
@@ -31,13 +24,22 @@ const SliderItem = ({ product: { name, price, images, like } }: Props) => {
         height={397}
       />
       <p>{name}</p>
-      <p>
-        <span>{price.salePrice && price.salePrice}$</span>
-        <span>{price.normalPrice}$</span>
-      </p>
+      {price.salePrice ? (
+        <p className={styles['sale-price']}>
+          <span className={styles['sale-price']}>
+            {price.salePrice && price.salePrice}$
+          </span>
+          <span className={styles['discount-price']}>{price.normalPrice}$</span>
+        </p>
+      ) : (
+        <p>
+          <span>{price.normalPrice}$</span>
+        </p>
+      )}
+
       {price.salePrice && (
         <div>
-          <span>-N%</span>
+          <span>-8%</span>
         </div>
       )}
 
@@ -64,4 +66,4 @@ const SliderItem = ({ product: { name, price, images, like } }: Props) => {
   );
 };
 
-export default SliderItem;
+export default ProductCard;

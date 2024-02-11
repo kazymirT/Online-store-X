@@ -1,16 +1,24 @@
-import ProductSection from '../Components/Product_section/ProductSection';
-import Banner from '../components/Banner/Banner';
-import { Props } from '../utils/constants';
+import Banner from '../Components/Banner/Banner';
+import ProductSection from '../Components/Products_section/ProductSection';
+import { Props, Props2, array } from '../utils/constants';
 
 const Home = () => {
   return (
-    <div>
+    <div style={{ background: '#fafafa' }}>
       <Banner />
       <ProductSection
         categoryName={Props.categoryName}
         products={Props.products}
-        sliderSettings={Props.sliderSetting}
+        sliderSettings={{ rows: 1 }}
       />
+      {array.map((arr, index) => (
+        <ProductSection
+          key={index}
+          categoryName={arr}
+          products={Props2.products}
+          sliderSettings={{ rows: 2 }}
+        />
+      ))}
     </div>
   );
 };

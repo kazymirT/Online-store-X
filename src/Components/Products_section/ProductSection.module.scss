@@ -1,0 +1,58 @@
+@use '/src/styles/colors.scss';
+@use '/src/styles/fonts.scss';
+
+.container {
+  width: 100%;
+  max-width: 1344px;
+  padding-top: 10em;
+  padding-bottom: 0.11em;
+  margin: 0 auto;
+
+  .title {
+    margin: 0 0 0.625em;
+
+    font-family: fonts.$second-family;
+    font-size: 3em;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 70%;
+    color: colors.$neutral-neutral-950;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .link {
+    position: relative;
+
+    display: block;
+
+    box-sizing: border-box;
+    width: 125px;
+    margin: 0 auto;
+    padding: 0.85em 2.2em 0.85em 0.6em;
+
+    font-family: fonts.$font-family;
+    font-size: 1.25em;
+    font-weight: 400;
+    color: colors.$neutral-neutral-950;
+
+    border-bottom: 2px solid transparent;
+
+    &::before {
+      content: '';
+
+      position: absolute;
+      top: 1.05em;
+      right: 0.75em;
+
+      width: 18px;
+      height: 16px;
+
+      background: url('../../Assets/svg/arrow-right.svg');
+    }
+
+    &:hover {
+      border-bottom: 0.1em solid colors.$black;
+    }
+  }
+}

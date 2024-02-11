@@ -1,0 +1,54 @@
+@use '/src/styles/colors.scss';
+@use '/src/styles/fonts.scss';
+
+@mixin slider-arrow($right) {
+  position: absolute;
+  top: -4.125em;
+  right: $right;
+
+  display: block;
+
+  width: 36px;
+  height: 36px;
+
+  background: colors.$neutral-neutral-950;
+  &::before {
+    content: '';
+
+    position: absolute;
+    top: 0.6875em;
+    left: 0.875em;
+
+    width: 7px;
+    height: 14px;
+
+    background: url('../../Assets/svg/left-arrow.svg');
+  }
+
+  &:hover {
+    cursor: pointer;
+    background: colors.$black;
+  }
+}
+
+.slider {
+  margin: 0 -0.75em 0.125em;
+}
+
+.arrow {
+  &-prev {
+    @include slider-arrow(3.75em);
+  }
+  &-next {
+    @include slider-arrow(0.78em);
+    transform: rotate(180deg);
+  }
+}
+
+.disabled {
+  background: colors.$neutral-neutral-200;
+  &:hover {
+    cursor: auto;
+    background: colors.$neutral-neutral-200;
+  }
+}
