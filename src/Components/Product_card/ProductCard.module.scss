@@ -35,11 +35,15 @@
       line-height: 0.9em;
       color: colors.$neutral-neutral-950;
       text-align: center;
+      &::after {
+        content: '\0024';
+      }
       &.sale-price {
         color: colors.$system-colors-system-error-error-600;
       }
       &.discount-price {
         color: colors.$neutral-neutral-300;
+        font-weight: 400;
         text-decoration: line-through;
       }
     }
@@ -49,20 +53,23 @@
     position: absolute;
     top: 0;
     left: 0;
-
-    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 61px;
     height: 27px;
-    padding-top: 0.25em;
-
-    font-family: fonts.$font-family;
-    font-size: 1em;
-    font-weight: 500;
-    line-height: 100%;
-    color: colors.$white;
-    text-align: center;
 
     background: colors.$system-colors-system-error-error-600;
+    span {
+      font-family: fonts.$font-family;
+      font-size: 1em;
+      font-weight: 500;
+      line-height: 100%;
+      color: colors.$white;
+      &::after {
+        content: '\0025';
+      }
+    }
   }
 
   button {

@@ -33,7 +33,7 @@ const ProductSlider = ({ products, sliderSettings }: PropsSlider) => {
     infinite: false,
     speed: 2000,
     slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     rows: sliderSettings.rows,

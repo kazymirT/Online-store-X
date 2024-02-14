@@ -27,19 +27,19 @@ const ProductCard = ({ product: { name, price, images, like } }: Props) => {
       {price.salePrice ? (
         <p className={styles['sale-price']}>
           <span className={styles['sale-price']}>
-            {price.salePrice && price.salePrice}$
+            {price.salePrice && price.salePrice}
           </span>
-          <span className={styles['discount-price']}>{price.normalPrice}$</span>
+          <span className={styles['discount-price']}>{price.normalPrice}</span>
         </p>
       ) : (
         <p>
-          <span>{price.normalPrice}$</span>
+          <span>{price.normalPrice}</span>
         </p>
       )}
 
       {price.salePrice && (
         <div>
-          <span>-8%</span>
+          <span>-8</span>
         </div>
       )}
 
@@ -48,7 +48,7 @@ const ProductCard = ({ product: { name, price, images, like } }: Props) => {
           width="24px"
           height="24px"
           viewBox="0 0 24 24"
-          fill={isLikeProduct ? 'black' : 'none'}
+          fill={isLikeProduct ? '#262626' : 'none'}
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
