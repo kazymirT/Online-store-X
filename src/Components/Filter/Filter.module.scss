@@ -1,0 +1,55 @@
+@use '../../styles/colors.scss';
+@use '../../styles/fonts.scss';
+
+.filter {
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-right: 6px;
+    cursor: pointer;
+
+    h4 {
+      font-family: fonts.$font-family;
+      font-weight: 400;
+      font-size: 20px;
+      color: colors.$black;
+    }
+    img {
+      width: 15px;
+      height: 8px;
+      transition: 0.2s all;
+      &.close {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    margin-bottom: 29px;
+
+    &.close {
+      display: none;
+    }
+    li {
+      label {
+        font-family: fonts.$font-family;
+        font-weight: 400;
+        font-size: 18px;
+        color: colors.$neutral-neutral-800;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        input {
+          height: 20px;
+          width: 20px;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}

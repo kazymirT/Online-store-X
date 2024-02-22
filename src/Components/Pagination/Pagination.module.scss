@@ -1,0 +1,33 @@
+@use '../../styles/colors.scss';
+@use '../../styles/fonts.scss';
+
+.pagination {
+  padding-top: 8px;
+  display: flex;
+  gap: 8px;
+
+  button {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid colors.$neutral-neutral-400;
+    font-family: fonts.$font-family;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+    color: colors.$neutral-neutral-950;
+    transition: all 0.2s;
+    overflow: hidden;
+    &:hover {
+      background: colors.$neutral-neutral-950;
+      color: colors.$white;
+      img {
+        filter: invert(99%) sepia(68%) saturate(16%) hue-rotate(243deg)
+          brightness(103%) contrast(100%);
+      }
+    }
+    &.next img {
+      transform: rotate(180deg);
+    }
+  }
+}

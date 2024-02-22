@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 
 import Layout from '../Layouts/Main/Layout';
+import Catalog from '../Pages/Catalog/Catalog';
 import ErrorPage from '../Pages/ErrorPage';
 import Home from '../Pages/Home';
 import Kids from '../Pages/Kids';
@@ -22,6 +23,7 @@ const route = createBrowserRouter(
       <Route path={ROUTE_PATH.MEN} element={<Men />} />
       <Route path={ROUTE_PATH.WOMEN} element={<Women />} />
       <Route path={ROUTE_PATH.KIDS} element={<Kids />} />
+      <Route path={ROUTE_PATH.CATALOG} element={<Catalog />} />
       <Route path={ROUTE_PATH.PAGE404} element={<Page404 />} />
     </Route>
   )
