@@ -9,4 +9,5 @@ export type Props = {
   sliderSettings: {
     rows: number;
   };
+  isSlider: boolean;
 };

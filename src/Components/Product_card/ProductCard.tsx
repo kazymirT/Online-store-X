@@ -1,49 +1,52 @@
+import classNames from 'classnames';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import styles from './ProductCard.module.scss';
 import { Props } from './ProductCard.types';
 
-const ProductCard = ({ product: { name, price, images, like } }: Props) => {
+const ProductCard = ({
+  product: { name, price, images, like },
+  className,
+}: Props) => {
   const [isLikeProduct, setIsLikeProduct] = useState<boolean>(like);
   const [imageIndex, setImageIndex] = useState<number>(0);
 
   const handlerLike = () => {
     setIsLikeProduct(!isLikeProduct);
   };
-
+  const classes = classNames(styles.card, { [styles['is-slider']]: className });
   return (
     <div
-      className={styles['slider-item']}
+      className={classes}
       onMouseEnter={() => setImageIndex(1)}
       onMouseLeave={() => setImageIndex(0)}
     >
-      <img
-        src={images[imageIndex]}
-        alt="shoes adidas"
-        width={318}
-        height={397}
-      />
-      <p>{name}</p>
-      {price.salePrice ? (
-        <p className={styles['sale-price']}>
-          <span className={styles['sale-price']}>
-            {price.salePrice && price.salePrice}
-          </span>
-          <span className={styles['discount-price']}>{price.normalPrice}</span>
-        </p>
-      ) : (
-        <p>
-          <span>{price.normalPrice}</span>
-        </p>
-      )}
-
-      {price.salePrice && (
-        <div>
-          <span>-8</span>
+      <Link className={styles.link} to={'/catalog'}>
+        <div className={styles['img-box']}>
+          <img src={images[imageIndex]} alt="shoes adidas" />
         </div>
-      )}
+        <p className={styles.title}>{name}</p>
+        <div className={styles.price}>
+          {price.salePrice ? (
+            <>
+              <p className={styles['sale-price']}>
+                {price.salePrice && price.salePrice}
+              </p>
+              <p className={styles['discount-price']}>{price.normalPrice}</p>
+            </>
+          ) : (
+            <p>{price.normalPrice}</p>
+          )}
+        </div>
 
-      <button onClick={handlerLike}>
+        {price.salePrice && (
+          <div className={styles['tag-sale']}>
+            <span>8</span>
+          </div>
+        )}
+      </Link>
+      <button onClick={handlerLike} className={styles.like}>
         <svg
           width="24px"
           height="24px"

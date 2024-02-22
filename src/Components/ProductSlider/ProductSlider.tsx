@@ -38,12 +38,32 @@ const ProductSlider = ({ products, sliderSettings }: PropsSlider) => {
     prevArrow: <PrevArrow />,
     rows: sliderSettings.rows,
     initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1500,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 1117,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 735,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
   return (
     <div className={styles.slider}>
       <Slider {...settings}>
         {products.map((product, index) => (
-          <ProductCard key={index} product={product} />
+          <ProductCard key={index} product={product} className="is-slider" />
         ))}
       </Slider>
     </div>

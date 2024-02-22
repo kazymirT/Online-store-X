@@ -5,4 +5,5 @@ export type Props = {
     images: string[];
     like: boolean;
   };
+  className?: string;
 };

@@ -7,6 +7,7 @@ export const ROUTE_PATH: Record<string, string> = {
   WOMEN: 'women',
   KIDS: 'kids',
   SALE: 'sale',
+  CATALOG: 'catalog',
   PAGE404: '*',
 };
 export const pages = ['HOME', 'MEN', 'WOMEN', 'KIDS', 'SALE'];
@@ -169,6 +170,39 @@ export const Props2 = {
       images: [shoes, shoes2],
       like: false,
     },
+    {
+      name: 'Adidas Adifom Climacool J Core',
+      price: { normalPrice: '50' },
+      images: [shoes, shoes2],
+      like: false,
+    },
+    {
+      name: 'Adidas Adifom Climacool J Core',
+      price: { normalPrice: '50' },
+      images: [shoes, shoes2],
+      like: false,
+    },
+    {
+      name: 'Adidas Adifom Climacool J Core',
+      price: { normalPrice: '50' },
+      images: [shoes, shoes2],
+      like: false,
+    },
+    {
+      name: 'Adidas Adifom Climacool J Core',
+      price: { normalPrice: '50' },
+      images: [shoes, shoes2],
+      like: false,
+    },
+  ],
+  sliderSetting: {
+    rows: 1,
+  },
+};
+
+export const Props3 = {
+  categoryName: 'Sale',
+  products: [
     {
       name: 'Adidas Adifom Climacool J Core',
       price: { normalPrice: '50' },
