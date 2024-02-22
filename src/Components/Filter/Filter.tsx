@@ -18,8 +18,8 @@ const Filter = ({ name, options }: Props) => {
           src={arrow}
           className={isOpen ? styles.open : styles.close}
           alt=""
-          width={6}
-          height={12}
+          width={8}
+          height={15}
         />
       </div>
       <ul className={isOpen ? styles.open : styles.close}>

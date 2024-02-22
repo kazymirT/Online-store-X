@@ -6,14 +6,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
-    padding-right: 6px;
+    margin-bottom: 1.5625em;
+    padding-right: 0.375em;
     cursor: pointer;
 
     h4 {
       font-family: fonts.$font-family;
       font-weight: 400;
-      font-size: 20px;
+      font-size: 1.25em;
       color: colors.$black;
     }
     img {
@@ -29,8 +29,8 @@
   ul {
     display: flex;
     flex-direction: column;
-    gap: 23px;
-    margin-bottom: 29px;
+    gap: 1.4375em;
+    margin-bottom: 1.8125em;
 
     &.close {
       display: none;
@@ -39,7 +39,7 @@
       label {
         font-family: fonts.$font-family;
         font-weight: 400;
-        font-size: 18px;
+        font-size: 1.125em;
         color: colors.$neutral-neutral-800;
         display: flex;
         align-items: center;
@@ -47,7 +47,7 @@
         input {
           height: 20px;
           width: 20px;
-          margin-right: 8px;
+          margin-right: 0.5em;
         }
       }
     }
